@@ -1,4 +1,3 @@
-
 # Employee Attrition Analytics & Prediction
 
 ## Project Overview
@@ -19,10 +18,10 @@ The project aims to support HR teams through data analysis, machine learning pre
 
 **IBM HR Analytics Employee Attrition & Performance**
 
-- Records: 1,470 employees
-- Features and columns: 35 total columns
-- Target: `Attrition` (Yes / No)
-- Data: Synthetic HR dataset
+- **Records:** 1,470 employees
+- **Columns:** 35
+- **Target:** `Attrition` (Yes / No)
+- **Data Type:** Synthetic HR dataset
 
 ## Project Progress
 
@@ -30,8 +29,8 @@ The project aims to support HR teams through data analysis, machine learning pre
 |---|---|
 | Project Planning | Completed |
 | Data Understanding & EDA | Completed |
-| Data Cleaning & Preprocessing | Next |
-| Model Development | Planned |
+| Data Cleaning & Preprocessing | Completed |
+| Model Development | Next |
 | Model Evaluation | Planned |
 | Model Explainability | Planned |
 | Dashboard Data Preparation | Planned |
@@ -40,13 +39,31 @@ The project aims to support HR teams through data analysis, machine learning pre
 
 ## Exploratory Data Analysis
 
-The EDA investigates data quality, employee characteristics, attrition distribution, feature relationships, and potential outliers.
+The EDA explores data quality, employee characteristics, attrition patterns, feature relationships, and potential outliers.
 
-The findings will guide data preparation and machine learning development.
+**Related Files:**
 
 - [EDA Notebook](notebooks/final_eda.ipynb)
 - [EDA Report](reports/eda_report.md)
 - [EDA Methodology](docs/eda_methodology.md)
+
+## Data Preparation & Feature Engineering
+
+The dataset has been cleaned and prepared for machine learning.
+
+- Removed three constant columns.
+- Selected 18 original features.
+- Created one additional feature: `IsEarlyTenure`.
+- Split the dataset into training (80%) and testing (20%).
+- Applied categorical encoding and numerical scaling.
+- Fitted preprocessing on training data only.
+- Prepared 32 numerical feature columns for model development.
+- Completed basic validation checks.
+
+**Related Files:**
+
+- [Data Preparation Documentation](docs/data_preparation.md)
+- [Data Preparation Report](reports/data_preparation_report.md)
 
 ## Project Documentation
 
@@ -54,21 +71,25 @@ The findings will guide data preparation and machine learning development.
 - [Project Roadmap](docs/project_roadmap.md)
 - [Folder Structure](docs/folder_structure.md)
 
-## Current Tools
+## Tools & Technologies
 
 - Python
 - Pandas
 - Matplotlib
+- Scikit-learn
+- Joblib
 - Jupyter Notebook
 - Git & GitHub
 
 ## Current Status
 
-The exploratory data analysis phase is complete.
+The Exploratory Data Analysis and Data Preparation phases are complete.
 
-The next phase focuses on data cleaning, preprocessing, and preparing features for machine learning.
+The dataset has been cleaned, and the selected features have been prepared and validated for machine learning.
 
-Machine learning models and the interactive dashboard are planned for later development.
+The next phase is Model Development, where three machine learning models will be trained and compared.
+
+The interactive HR dashboard will be developed in later phases.
 
 ## Dataset Limitations
 
