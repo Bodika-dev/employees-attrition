@@ -30,8 +30,8 @@ The project aims to support HR teams through data analysis, machine learning pre
 | Project Planning | Completed |
 | Data Understanding & EDA | Completed |
 | Data Cleaning & Preprocessing | Completed |
-| Model Development | Next |
-| Model Evaluation | Planned |
+| Model Development | Completed |
+| Model Evaluation | Next |
 | Model Explainability | Planned |
 | Dashboard Data Preparation | Planned |
 | Frontend Development | Planned |
@@ -65,6 +65,46 @@ The dataset has been cleaned and prepared for machine learning.
 - [Data Preparation Documentation](docs/data_preparation.md)
 - [Data Preparation Report](reports/data_preparation_report.md)
 
+## Model Development
+
+Three classification models were trained and compared:
+
+- Logistic Regression
+- Decision Tree
+- Random Forest
+
+The models were evaluated using **5-fold stratified cross-validation** on the training dataset.
+
+Hyperparameter tuning was performed using GridSearchCV, with F1-score as the optimization metric.
+
+### Model Development Results
+
+| Model | Initial F1-score | Tuned F1-score |
+|---|---:|---:|
+| Logistic Regression | 0.510 | **0.526** |
+| Decision Tree | 0.364 | 0.406 |
+| Random Forest | 0.476 | 0.494 |
+
+**Logistic Regression** achieved the highest tuned cross-validation F1-score and was selected as the candidate model for further evaluation.
+
+Its tuned cross-validation results were:
+
+- **F1-score:** 0.526
+- **Precision:** 0.712
+- **Recall:** 0.421
+- **ROC-AUC:** 0.834
+
+The tuned model improved precision but reduced recall compared with the initial configuration. This trade-off will be reviewed during Model Evaluation.
+
+The candidate model and its preprocessing pipeline were saved locally as `models/attrition_pipeline.joblib`.
+
+**Note:** These are training cross-validation results, not final test performance.
+
+**Related Files:**
+
+- [Model Development Documentation](docs/model_development.md)
+- [Model Development Report](reports/model_development_report.md)
+
 ## Project Documentation
 
 - [Project Overview](docs/project_overview.md)
@@ -83,11 +123,13 @@ The dataset has been cleaned and prepared for machine learning.
 
 ## Current Status
 
-The Exploratory Data Analysis and Data Preparation phases are complete.
+The Exploratory Data Analysis, Data Preparation, and Model Development phases are complete.
 
-The dataset has been cleaned, and the selected features have been prepared and validated for machine learning.
+Three machine learning models have been trained, compared, and tuned using cross-validation.
 
-The next phase is Model Development, where three machine learning models will be trained and compared.
+Logistic Regression is currently the leading candidate based on the tuned F1-score.
+
+The next phase is **Model Evaluation**, where the selected model will be tested on the held-out test dataset. Classification performance, prediction errors, and the precision–recall trade-off will be examined before finalizing the model.
 
 The interactive HR dashboard will be developed in later phases.
 
